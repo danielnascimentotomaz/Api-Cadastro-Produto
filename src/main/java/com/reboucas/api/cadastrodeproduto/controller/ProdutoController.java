@@ -6,10 +6,7 @@ import com.reboucas.api.cadastrodeproduto.service.ProdutosServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,5 +32,15 @@ public class ProdutoController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(produtos);
     }
+
+
+    @GetMapping("/buscarId{id}")
+    public ResponseEntity<Produtos> buscarId(@PathVariable(name = "id") Long id) {
+
+
+        return ResponseEntity.status(HttpStatus.OK).body(productosServices.findById(id));
+
+    }
+
 
 }

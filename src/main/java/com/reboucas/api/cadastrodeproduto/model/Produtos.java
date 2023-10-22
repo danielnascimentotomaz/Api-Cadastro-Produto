@@ -28,13 +28,18 @@ public class Produtos {
     public Produtos() {
     }
 
-    public Produtos(String nome, String descricao, Double preco, Integer quantidade, String imagem) {
+    public Produtos(int id,  String nome, String descricao, Double preco, Integer quantidade, String imagem) {
+        this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.quantidade = quantidade;
 
     }
+    public int getId() {
+        return id;
+    }
+
 
     public String getNome() {
         return nome;
